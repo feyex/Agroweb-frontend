@@ -2,45 +2,46 @@
  <section id ="main">
     <div class="moverlay"></div>
     <div class="container">
-        <a routerLink="/"><h1 class="drk">AgroWeb</h1> </a>
-      <hr class="rule">
-      <h3 class="text-dark">Set your email and password.</h3>
+        <div class="col-md-12 col-sm-12">
+            <a routerLink="/" class="brand"><h1 class="drk"><i>Agroweb</i></h1></a>
+        </div> 
+        <hr class="rule">
+        <h3 class="text-dark">Set your email and password.</h3>
 
-      <div class="row">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 bt btn">    
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+        </div>
 
-          <div class="col-md-4 col-sm-6 bt btn">
-              <!-- <a routerLink="/" class=" bt btn section-btn smoothScroll">Signup With Twitter</a> -->
-              <input type="email" name="email" placeholder="Email" required>
-          </div>
-      </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6  bt btn">
+                <input type="Password" name="password" placeholder="Password">
+            </div>
+        </div>
 
-      <div class="row">
-          <div class="col-md-4 col-sm-6  bt btn">
-              <input type="Password" name="password" placeholder="Password">
-          </div>
-      </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6  bt btn">
+                <input type="Password" name="password" placeholder="Confirm Password">
+            </div>
+        </div>
 
-      <div class="row">
-          <div class="col-md-4 col-sm-6  bt btn">
-              <input type="Password" name="password" placeholder="Confirm Password">
-          </div>
-      </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <a routerLink="/" class=" bt btn section-btn smoothScroll">Sign Up</a>
+            </div>
+        </div><br>
 
-      <div class="row">
-          <div class="col-md-4 col-sm-6">
-              <a routerLink="/" class=" bt btn section-btn smoothScroll">Sign Up</a>
-          </div>
-      </div>
-
-      <div>
-        <p>Or signup using  <a routerLink="/signup"> TWITTER or FACEBOOK </a></p>
-      </div>
-       
-
-      <p>
-        <span> <b>Already have an account? </b></span> &nbsp; &nbsp;
-        <span><b>LOGIN</b></span>
-      </p>
+        <div class="col-md-12 col-sm-12">
+            <p>Or signup using  <a routerLink="/signup"> TWITTER or FACEBOOK </a></p>
+        </div>
+        
+        <div class="col-md-12 col-sm-12">
+            <p>
+                <span> <b>Already have an account? </b></span> &nbsp; &nbsp;
+                <a routerLink="/login"> <span class="text-white"><b>LOGIN</b></span></a>
+            </p>
+        </div>
 
     </div>
              
@@ -49,3 +50,4 @@
 <!-- Footer -->
 
 <app-nav></app-nav>
+
