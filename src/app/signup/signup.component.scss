@@ -240,20 +240,56 @@ section {
    RESPONSIVE STYLES              
 -----------------------------------------*/
 
-@media screen and (max-width: 230px){
+@media screen and (max-width: 179px){
   input {
     font-size: 12px;
     margin-left: 1rem;
+    max-width: 6rem;
+  }
+
+  .section-btn{
+    margin-left: -0.5rem;
+  }
+
+  .bt{
+    width: 5rem;
+    font-size: 12px;
+  }
+
+  .drk{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  #main{
+    min-height: 90vh;
+  }
+
+p {
+  
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 33px;
+}
+
+}
+
+
+@media screen  and (min-width: 180px) and (max-width: 230px){
+  input {
+    font-size: 12px;
+    margin-left: 2rem;
     max-width: 8rem;
   }
 
   .section-btn{
-    margin-left: 2rem;
+    margin-left: 0rem;
   }
 
   .bt{
-    width: 6rem;
-    font-size: 13px;
+    width: 5rem;
+    font-size: 12px;
   }
 
   .drk{
@@ -289,6 +325,10 @@ p {
   .bt{
     width: 6rem;
     font-size: 13px;
+  }
+
+  .drk{
+    font-size: 47px;
   }
 
 }

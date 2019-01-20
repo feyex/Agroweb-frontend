@@ -187,6 +187,7 @@ section {
  /*---------------------------------------
      FOOTER              
   -----------------------------------------*/
+  
 
   footer {
     background: #747272;  /* fallback for old browsers */
@@ -226,7 +227,72 @@ section {
    RESPONSIVE STYLES              
 -----------------------------------------*/
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 179px) {
+
+  .section-btn{
+      margin-left: -0.5rem;
+  }
+
+  .bt{
+    width: 7rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 9px;
+    font-style: italic;
+    font-weight: bold;
+    padding-left: 0.5rem
+  }
+
+  #main{
+    min-height: 90vh;
+  }
+
+  p {
+    
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 33px;
+  }
+
+  .drk{
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 180px) and (max-width: 315px) {
+
+  .section-btn{
+      margin-left: 0.5rem;
+  }
+
+  .bt{
+    width: 9rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    padding-left: 0.5rem;
+  }
+
+  #main{
+    min-height: 90vh;
+  }
+
+  p {
+    
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 33px;
+  }
+
+  .drk{
+    font-size: 32px;
+  }
+}
+
+
+@media screen and (min-width: 316px) and (max-width: 575px) {
 
   .section-btn{
       margin-left: 2rem;
