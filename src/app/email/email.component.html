@@ -8,30 +8,67 @@
         <hr class="rule">
         <h3 class="text-dark">Set your email and password.</h3>
 
-        <div class="row">
-            <div class="col-md-4 col-sm-6 bt btn">    
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <!-- <div class="row">
+                <div class="col-md-4 col-sm-6 bt btn">    
+                    <input formControlName="firstName" type="text" id="firstName" placeholder="First name"  required />
 
-        <div class="row">
-            <div class="col-md-4 col-sm-6  bt btn">
-                <input type="Password" name="password" placeholder="Password">
-            </div>
-        </div>
+                    <div *ngIf="submitted" class="invalid-feedback" >
+                    <div *ngIf="">First Name is required</div>
+                    </div>
+                </div>
+            </div> -->
 
-        <div class="row">
-            <div class="col-md-4 col-sm-6  bt btn">
-                <input type="Password" name="password" placeholder="Confirm Password">
-            </div>
-        </div>
+           
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 bt btn">    
+                        <input formControlName="username" type="text" id="username" placeholder="User name"  required />
+    
+                        <div *ngIf="submitted" class="invalid-feedback" >
+                        <div *ngIf="">First Name is required</div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <a routerLink="/" class=" bt btn section-btn smoothScroll">Sign Up</a>
-            </div>
-        </div><br>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 bt btn">    
+                    <input formControlName="email" type="email" id="inputEmail4" placeholder="Email"  required />
 
+                    <div *ngIf="submitted" class="invalid-feedback">
+                        <div *ngIf="">Email is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6  bt btn">
+                    <input formControlName="password" type="password" id="password" placeholder="Create Password" required />
+
+                    <div *ngIf="submitted" class="invalid-feedback">
+                    <div *ngIf="">Password is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6  bt btn">
+                    <input formControlName="confirmpassword" type="password" id="confirmpassword" placeholder="Confirm Password"  required />
+
+                    <div *ngIf="submitted" class="invalid-feedback">
+                        <div *ngIf="">Password is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                        <button [disabled]="loading" class=" bt btn section-btn smoothScroll" type="submit"> Sign Up </button>
+
+                    <!-- <a routerLink="/" class=" bt btn section-btn smoothScroll">Sign Up</a> -->
+                </div>
+            </div><br>
+
+        </form>
         <div class="col-md-12 col-sm-12">
             <p>Or signup using  <a routerLink="/signup"> TWITTER or FACEBOOK </a></p>
         </div>

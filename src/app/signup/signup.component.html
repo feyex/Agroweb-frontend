@@ -8,25 +8,38 @@
     <hr class="rule">
     <h3 class="text-dark">Login with your email and password.</h3>
 
-    <div class="row">
-        <div class="col-md-4 col-sm-6 bt btn">
-            <input type="email" name="email" placeholder="Email" required>
-        </div>
-    </div>
+    <form [formGroup]="navLoginForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 bt btn">
+                <input formControlName="email" class="" type="text" placeholder="email" aria-label="email"
+                [ngClass]="{'is-valid': submitted }">
 
-    <div class="row">
-        <div class="col-md-4 col-sm-6  bt btn">
-            <input type="Password" name="password" placeholder="Password">
+                <div *ngIf="email.invalid" class="invalid-feedback">
+                  <div>Email is required</div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4 col-sm-6">
-          <!-- <button> -->
-            <a routerLink="/" class=" bt btn section-btn smoothScroll">Login</a>
-          <!-- </button>  -->
+        <div class="row">
+            <div class="col-md-4 col-sm-6  bt btn">
+                <input formControlName="password" type="password" placeholder="password" aria-label="password"
+                [ngClass]="{'is-valid': submitted }">
+
+                <div *ngIf="password.invalid" class="invalid-feedback">
+                    <div>Password is required</div>
+                </div>
+            </div>
         </div>
-    </div>  <br>
+
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+            <!-- <button> -->
+                <button [disabled]="loading" class="bt btn section-btn " type="submit">Login</button>
+                <!-- <a routerLink="/" class=" bt btn section-btn smoothScroll">Login</a> -->
+            <!-- </button>  -->
+            </div>
+        </div>  <br>
+    </form>
 
    
 
