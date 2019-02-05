@@ -99,7 +99,7 @@ a:hover, a:active, a:focus {
 }
 
 .section-btn {
-  background: #ce3232;
+  background: #365f37;
   border: 0;
   border-radius: 100px;
   color: #ffffff;
@@ -109,6 +109,7 @@ a:hover, a:active, a:focus {
   padding: 15px 30px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  margin-left: 32rem !important;
 }
 
 .section-btn:hover,
@@ -130,6 +131,7 @@ section {
   padding-top: 80px;
   padding-bottom: 80px;
   text-align: center;
+  background-color: white;
 }
 
 
@@ -143,7 +145,7 @@ section {
   padding-top: 1rem;
 }
 .navbar-custom .navbar-toggle {
-  color: rgb(218, 45, 45);
+  color:#365f37;
   background-color: rgba(255, 255, 255, 0.2);
   font-size: 12px;
   
@@ -208,13 +210,15 @@ section {
 /* Custom Horizontal Rule */
 
 hr.small {
-  max-width: 100px;
+  max-width: 260px;
+ background-color: #7fc930 !important;
+  
 }
 
 header {
   background-image: url("../../assets/img/z.jpg");
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -223,8 +227,9 @@ header {
   text-align: center;
   background-color: hsl(0, 0%, 3%);
   color: white;
-  margin-top: 4rem;
-  opacity: 0.7;
+  margin-top: 5rem;
+  // opacity: 0.7;
+
 }
 header .intro-text {
   padding-top:150px;
@@ -330,5 +335,41 @@ font-size: 1.3rem;
   
   .drk{
     color:#393939;
+    font-size: 3rem;
+    font-weight:600;
+    }
+
+    input {
+      background: #ebe8e8;  
+      width: 373px;
+      height: 40px;
+      border: 0;
+      border-radius: 10px;
+      color: #0c0101;
+      cursor: pointer;
+      font-size: inherit;
+      font-weight: normal;
+      padding: 15px 30px;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      margin-left:7rem;
+  
+    }
+    
+    label{
+      display: inline-block;
+      margin-bottom: .5rem;
+      margin-left: 7rem;
+      font-style: italic;
+      font-weight: bold;
     }
   
+    .lb{
+      margin-left: 3rem;
+    }
+
+    #description{
+      width: 82%;
+      margin-left: 4rem;
+      height: 3rem;
+    }

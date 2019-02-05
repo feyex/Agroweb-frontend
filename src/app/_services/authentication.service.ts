@@ -14,7 +14,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
   
-  login(email: string, password: string) {
+  login(email: string, password: string,) {
     const uri ='http://localhost:9000/login';
 
     const obj = {
@@ -28,8 +28,17 @@ export class AuthenticationService {
           localStorage.setItem('currentUser', JSON.stringify(user));
         }
         return user;
+        console.log(user);
       }));
 
+  }
+
+  getProduct(id: number) {
+    const url = `http://localhost:9000/logout/${id}`;
+    return this.http.get<any>(url).pipe(
+      tap(_ => console.log(`fetched product id=${id}`)),
+      catchError(this.handleError<any>(`user_id=${id}`))
+    );
   }
 
   register(user :User) {
@@ -47,9 +56,11 @@ export class AuthenticationService {
   }
 
   logout(id :number) {
-
+   
     // remove user from local storage to log user out
     const url = `http://localhost:9000/logout/${id}`;
+
+    console.log(id);
 
     return this.http.get(url)
     .pipe(

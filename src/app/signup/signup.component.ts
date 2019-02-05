@@ -33,38 +33,38 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        let currentUrl = event.url;
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     let currentUrl = event.url;
 
-        switch (currentUrl) {
-          case '/signup':
-            this.login = true;
-            this.home = false;
-            break;
+    //     switch (currentUrl) {
+    //       case '/signup':
+    //         this.login = true;
+    //         this.home = false;
+    //         break;
           
-          case '/login':
-            this.home = true;
-            this.login = false;
-            break;
+    //       case '/login':
+    //         this.home = true;
+    //         this.login = false;
+    //         break;
 
-          case '/profile':
-            this.home = true;
-            this.login = false;
-            break;
+    //       case '/profile':
+    //         this.home = true;
+    //         this.login = false;
+    //         break;
 
-          case '/':
-            this.home = true;
-            this.login = false;
-            break;
+    //       case '/':
+    //         this.home = true;
+    //         this.login = false;
+    //         break;
         
-          default:
-            this.home = false;
-            this.login = false;
-            break;
-        }
-      }
-    });
+    //       default:
+    //         this.home = false;
+    //         this.login = false;
+    //         break;
+    //     }
+    //   }
+    // });
 
     this.navLoginForm = new FormGroup ({
       email: new FormControl(),

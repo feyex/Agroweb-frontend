@@ -1,1 +1,9 @@
-<div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>
+<section style="background-color: #bec0be;
+margin-bottom: -1rem;" >
+    <!-- <div class="moverlay"></div> -->
+    <div class="container">
+
+      <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-primary': message.type === 'error' }">{{message.text}}</div>
+
+     </div>
+</section> 

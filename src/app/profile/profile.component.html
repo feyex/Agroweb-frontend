@@ -1,17 +1,183 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-    </div>
-</nav>
 
-<!-- main app container -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 offset-sm-3">
-                Welcome
+    
+    <!--Navigation-->
+    <nav  class="navbar navbar-expand-lg fixed-top navbar-custom ">
+        <div class="container text-white">
+        <a class="navbar-brand navbar-bran text-danger font" href="#">Agroweb</a>
+        <button class="navbar-toggler btn-dark " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link page-scroll " href="/">Home | <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link page-scroll"  href="about">Create |</a>
+                </li>
+          
+                <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="about">Questions |</a>
+                </li>
+                    
+                <li class="nav-item">
+                  <a class="nav-link page-scroll"  href="#contact">Messsages |</a>
+                </li>
+                
+                <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="#contact">Notifications |</a>
+                      </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Header -->
+      <header>
+          
+        <div class="container">
+            <div class="intro-text">
+              <div class="intro-heading exp">AGROWEB</div>
+                <div class="exp"> 
+                        <p class=" new text-center text-white"><i>"WE ARE DRIVEN BY IDEAS, CREATIVITY, INNOVATION, PARTICIPATION AND PEOPLE"</i></p>
+                  <!-- <p class="new text-danger">Achieving insight and intellectual growth </p> -->
+                </div>
+             
             </div>
         </div>
-    </div>
-</div>
+      </header>
+
+      <section id ="main">
+        <div class="container">
+          <h3 class="text-center drk">Welcome{{currentUser.username}} </h3>
+          
+            <div class="row">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div *ngIf="login" class="form-row">
+                    <div class="col-md-4 col-sm-6">
+                          <div class="about-info">
+                              <div class="section-title">
+                                    <h2>BIO INFO</h2>
+                                    <span class="line-bar">...</span>
+                              </div>
+                              <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+                                  <div class="row">
+                                      <div class="col-md-4 col-sm-6 bt btn">  
+                                        
+                                        <label for="biodata">A brief descrition of yourself </label>
+                                          <input formControlName="description" type="text" id="description" placeholder="Tel us about yourself"  required /> <span class="text-danger">*</span>
+                      
+                                          <div *ngIf="submitted" class="invalid-feedback" >
+                                          <div *ngIf="">Field cannot be blank</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                <div class="row">
+                                          <div class="col-md-4 col-sm-6 bt btn">   
+                                            <label for="image">Upload your picture</label> 
+                                              <input formControlName="image" type="file" id="image"  required /><span class="text-danger">*</span>
+                          
+                                              <div *ngIf="submitted" class="invalid-feedback" >
+                                              <div *ngIf="">Please Upload Picture</div>
+                                              </div>
+                                          </div>
+                                  </div>
+                                <!-- </form> -->
+                            </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                          <div class="about-info skill-thumb">
+                              <div class="section-title">
+                                    <h2 style="line-height: 0.9;">Please fill the form below to get you started</h2>
+                                    <span class="line-bar">...</span>
+                              </div>
+                              <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 bt btn">   
+                                      <label for="name">First name:</label> 
+                                        <input formControlName="firstname" type="text"  placeholder="First Name"  required /><span class="text-danger">*</span>
+                    
+                                        <div *ngIf="submitted" class="invalid-feedback">
+                                            <div *ngIf="">First Name is required</div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 bt btn">   
+                                        <label for="name">Last name:</label>  
+                                        <input formControlName="lastname" type="text"  placeholder="last Name"  required /><span class="text-danger">*</span>
+                    
+                                        <div *ngIf="submitted" class="invalid-feedback">
+                                            <div *ngIf="">Last Name is required</div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 bt btn">  
+                                        <label for="name">Phone Number:</label>   
+                                        <input formControlName="phone" type="number"  placeholder="Phone Number"  required /><span class="text-danger">*</span>
+                    
+                                        <div *ngIf="submitted" class="invalid-feedback">
+                                            <div *ngIf="">Phone Number is required</div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <label for="name">Address:</label> 
+                                    <div class="col-md-4 col-sm-6 bt btn">                      
+                                        <textarea formControlName="address" placeholder="Enter Address"  cols="30" rows="10"></textarea>  
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <label for="name">City:</label> 
+                                    <div class="col-md-4 col-sm-6 bt btn">    
+                                        <input formControlName="city" type="text" />
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <label for="name">State:</label> 
+                                    <div class="col-md-4 col-sm-6 bt btn">    
+                                        <input formControlName="state" type="text" />
+                                    </div>
+                                </div> 
+                            <!-- </form>  -->
+                            
+                          </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                          <div class="section-title">
+                              <h2>Upload Products</h2>
+                              <span class="line-bar">...</span>
+                          </div>
+                          <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+                            <div *ngIf="login" class="form-row">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-6 bt btn">   
+                                    <label for="image">Upload your products</label> 
+                                      <input formControlName="image" type="file" id="image"  required />
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-6 bt btn">   
+                                    <label for="image">Upload your products</label> 
+                                      <input formControlName="image" type="file" id="image"  required />
+                                  </div>
+                              </div>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+             
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                                <button [disabled]="loading" class=" bt btn section-btn smoothScroll" type="submit"> Submit </button>
+                        </div>
+                    </div><br>
+                    
+                  </div>
+              </form>
+            </div>
+        </div>
+
+     </section>

@@ -20,6 +20,7 @@ import { AlertService, AuthenticationService, UserService } from './_services';
 import { AuthGuard } from "./_guards";
 import { ErrorInterceptor, JwtInterceptor  } from "./_helpers";
 import { ProfileComponent } from './profile/profile.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 
 
 
@@ -33,6 +34,7 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     AlertComponent,
     ProfileComponent,
+    ViewProfileComponent,
     
     
   ],
