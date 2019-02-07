@@ -33,18 +33,30 @@ export class AuthenticationService {
 
   }
 
-  getProduct(id: number) {
-    const url = `http://localhost:9000/logout/${id}`;
-    return this.http.get<any>(url).pipe(
-      tap(_ => console.log(`fetched product id=${id}`)),
-      catchError(this.handleError<any>(`user_id=${id}`))
-    );
-  }
+  // getProduct(id: number) {
+  //   const url = `http://localhost:9000/logout/${id}`;
+  //   return this.http.get<any>(url).pipe(
+  //     tap(_ => console.log(`fetched product id=${id}`)),
+  //     catchError(this.handleError<any>(`user_id=${id}`))
+  //   );
+  // }
 
   register(user :User) {
     const uri = 'http://localhost:9000/newuser';
 
     // user.role = "bidder";
+
+    return this.http.post<any>(uri, user)
+      .pipe(map(user => {
+        if (user && user.api_token) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+        }
+        return user;
+      }));
+  }
+
+  profile(user :User) {
+    const uri = 'http://localhost:9000/student';
 
     return this.http.post<any>(uri, user)
       .pipe(map(user => {

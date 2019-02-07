@@ -51,9 +51,9 @@
 
 <section>
   <div class="container">
-      <h2 class="drk">Set Up Your Profile</h2>
+      <h2 class="drk"> Your Profile</h2>
       <hr class="small">
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-md-6 col-sm-6">
               <div class="row">
@@ -165,7 +165,7 @@
                 <div class="col-md-12 col-sm-12 bt btn">  
                   
                  <!-- <div><label class="text-right">A brief description of yourself </label></div> -->
-                    <input formControlName="description" type="text" id="description" placeholder="Tell us about yourself"  required /> <span class="text-danger">*</span>
+                    <!-- <input formControlName="description" type="text" id="description" placeholder="Tell us about yourself"  required /> <span class="text-danger">*</span>
 
                     <div *ngIf="submitted" class="invalid-feedback" >
                     <div *ngIf="">Field cannot be blank</div>
@@ -175,12 +175,12 @@
         <div class="row">
           <div class="col-md-4 col-sm-6">
                   <button [disabled]="loading" class=" bt btn section-btn smoothScroll" type="submit"> Sign Up </button>
-
-              <!-- <a routerLink="/" class=" bt btn section-btn smoothScroll">Sign Up</a> -->
           </div>
       </div><br>
   
-      </form>
-  </div>
+      </form> -->
+  </div> 
   
 </section>
+
+<app-nav></app-nav>
