@@ -6,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { FileSelectDirective } from 'ng2-file-upload';
+
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -35,6 +37,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     AlertComponent,
     ProfileComponent,
     ViewProfileComponent,
+    FileSelectDirective
     
     
   ],

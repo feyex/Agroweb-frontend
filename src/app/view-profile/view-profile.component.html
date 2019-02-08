@@ -51,134 +51,27 @@
 
 <section>
   <div class="container">
-      <h2 class="drk"> Your Profile</h2>
-      <hr class="small">
-      <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2 class="drk"> Your Profile</h2>
+    <hr class="small">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="row">
-          <div class="col-md-6 col-sm-6">
-              <div class="row">
-                  <div class="col-md-6 col-sm-6 bt btn">  
-                    <div><label for="name">First Name:</label></div>  
-                      <input formControlName="firstname" type="text" id="username"  required /><span class="text-danger">*</span>
-    
-                      <div *ngIf="submitted" class="invalid-feedback" >
-                      <div *ngIf="">First Name is required</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 col-sm-6 bt btn">  
-                     <div> <label for="name">Phone Number:</label></div> 
-                      <input formControlName="phone" type="number"   required /><span class="text-danger">*</span>
-  
-                      <div *ngIf="submitted" class="invalid-feedback">
-                          <div *ngIf="">Phone Number is required</div>
-                      </div>
-                  </div>
-              </div> 
-              <div class="row">
-                    <div class="col-md-6 col-sm-6 bt btn">  
-                            <div><label class="lb">Address:</label></div>  
-                              <input formControlName="address" type="text"   required /><span class="text-danger">*</span>
-            
-                              <div *ngIf="submitted" class="invalid-feedback" >
-                              <div *ngIf="">Address is required</div>
-                              </div>
-                          </div>
-              </div> 
-              <div class="row">
-                    <div class="col-md-6 col-sm-6 bt btn">  
-                      <div><label class="lb">State:</label></div>  
-                        <input formControlName="state" type="text"   required /><span class="text-danger">*</span>
-      
-                        <div *ngIf="submitted" class="invalid-feedback" >
-                        <div *ngIf="">State is required</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 bt btn">  
-                            <div><label for="name">Institution:</label></div>  
-                            <input formControlName="school" type="text"   required /><span class="text-danger">*</span>
-        
-                            <div *ngIf="submitted" class="invalid-feedback" >
-                            <div *ngIf="">Institution is required</div>
-                            </div>
-                    </div>
-                </div>
-          </div>
-          <div class="col-md-6 col-sm-6">
-              <div class="row">
-                  <div class="col-md-6 col-sm-6 bt btn">   
-                      <div><label for="name">Last Name:</label></div>  
-                      <input formControlName="lastname" type="text" id="username" required /><span class="text-danger">*</span>
-    
-                      <div *ngIf="submitted" class="invalid-feedback" >
-                      <div *ngIf="">Last Name is required</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 col-sm-6 bt btn">  
-                     <div> <label class="lb">Sex:</label></div> 
-                      <input formControlName="sex" type="text" required /><span class="text-danger">*</span>
-  
-                      <div *ngIf="submitted" class="invalid-feedback">
-                          <div *ngIf="">Sex is required</div>
-                      </div>
-                  </div>
-              </div> 
-              <div class="row">
-                    <div class="col-md-6 col-sm-6 bt btn">  
-                      <div><label class="lb">Country:</label></div>  
-                        <input formControlName="country" type="text" id="Country"  required /><span class="text-danger">*</span>
-      
-                        <div *ngIf="submitted" class="invalid-feedback" >
-                        <div *ngIf="">Country is required</div>
-                        </div>
-                    </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 col-sm-6 bt btn">  
-                        <div><label class="lb">Course:</label></div>  
-                        <input formControlName="course" type="text"   required /><span class="text-danger">*</span>
+            <div class="col-md-12 col-sm-12 bt btn">  
+                <div><label style="margin-left:2rem; font-size:4rem;">Profile_Photo:</label></div> 
 
-                        <div *ngIf="submitted" class="invalid-feedback" >
-                        <div *ngIf="">Course is required</div>
-                        </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 col-sm-6 bt btn">  
-                        <div><label for="name">Profile_Photo:</label></div>  
-                        <input formControlName="image" type="file"   required /><span class="text-danger">*</span>
+                <span style="color:red;" *ngIf="message">{{message}}</span>
+                <input formControlName="image" #file type="file" accept='image/*' (change)="preview(file.files)" ng2FileSelect [uploader]="uploader" style="margin-left:2rem; height:4rem;" /> <br><br><br>
+                <div><img [src]="imgURL" height="200"  width="300" *ngIf="imgURL"></div><br><br><br>
 
-                        <div *ngIf="submitted" class="invalid-feedback" >
-                        <div *ngIf="">Profile_Photo is required</div>
-                        </div>
+                <div>
+                    <button type="button" class="btn btn-success btn-s" 
+                        (click)="uploader.uploadAll()" 
+                        [disabled]="!uploader.getNotUploadedItems().length" >
+                            Upload an Image 
+                    </button>
                 </div>
-              </div>
-          </div>
-
+            </div>
         </div>
-        <div class="row">
-                <div class="col-md-12 col-sm-12 bt btn">  
-                  
-                 <!-- <div><label class="text-right">A brief description of yourself </label></div> -->
-                    <!-- <input formControlName="description" type="text" id="description" placeholder="Tell us about yourself"  required /> <span class="text-danger">*</span>
-
-                    <div *ngIf="submitted" class="invalid-feedback" >
-                    <div *ngIf="">Field cannot be blank</div>
-                    </div>
-                </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-                  <button [disabled]="loading" class=" bt btn section-btn smoothScroll" type="submit"> Sign Up </button>
-          </div>
-      </div><br>
-  
-      </form> -->
+    </form>
   </div> 
   
 </section>

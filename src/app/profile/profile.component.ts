@@ -11,9 +11,10 @@ import { config } from 'rxjs';
 
 
 import { User } from "../_models";
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 
 
-
+const URL = 'http://localhost:9000/photo';
 
 @Component({
   selector: 'app-profile',
@@ -25,30 +26,34 @@ export class ProfileComponent implements OnInit {
   submitted = false;
   returnUrl: string;
 
+   //function responsible for preview of image in the browser before submission
    public imagePath;
-  imgURL: any;
-  public message: string;
- 
-  preview(files) {
-    if (files.length === 0)
-      return;
- 
-    var mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
-      return;
-    }
- 
-    var reader = new FileReader();
-    this.imagePath = files;
-    reader.readAsDataURL(files[0]); 
-    reader.onload = (_event) => { 
-      this.imgURL = reader.result; 
-    }
-  }
+   imgURL: any;
+   public message: string;
   
-
-  registerForm = new FormGroup({
+   preview(files) {
+     if (files.length === 0)
+       return;
+  
+     var mimeType = files[0].type;
+     if (mimeType.match(/image\/*/) == null) {
+       this.message = "Only images are supported.";
+       return;
+     }
+  
+     var reader = new FileReader();
+     this.imagePath = files;
+     reader.readAsDataURL(files[0]); 
+     reader.onload = (_event) => { 
+       this.imgURL = reader.result; 
+     }
+   }
+   
+   //function responsible for binding angular with lumen
+   public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'image'});
+ 
+ //function responsible for form binding
+   registerForm = new FormGroup({
     firstname: new FormControl('', Validators.required),
     lastname: new FormControl('', Validators.required),
     phone: new FormControl(' ', Validators.required),
@@ -75,9 +80,16 @@ export class ProfileComponent implements OnInit {
     )
     {} 
      
-
-  ngOnInit() {
     
+
+    
+  ngOnInit() {
+    //function for uploading image by connecting with backend
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+         console.log('ImageUpload:uploaded:', item, status, response);
+         alert('File uploaded successfully');
+     };
   }
 
   onSubmit() {
@@ -85,7 +97,9 @@ export class ProfileComponent implements OnInit {
         
     // stop here if form is invalid
     if (this.registerForm.invalid) {
+      
       return console.log("Empty Input");
+      
     }
 
     this.loading = true;

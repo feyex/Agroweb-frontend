@@ -11,8 +11,9 @@ import { config } from 'rxjs';
 
 
 import { User } from "../_models";
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 
-
+const URL = 'http://localhost:9000/photo';
 
 @Component({
   selector: 'app-view-profile',
@@ -25,13 +26,35 @@ export class ViewProfileComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   
+  //function responsible for preview of image in the browser before submission
+  public imagePath;
+  imgURL: any;
+  public message: string;
+ 
+  preview(files) {
+    if (files.length === 0)
+      return;
+ 
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+ 
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      this.imgURL = reader.result; 
+    }
+  }
+  
+  //function responsible for binding angular with lumen
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'image'});
 
+//function responsible for form binding
   registerForm = new FormGroup({
-    // firstName: new FormControl('', Validators.required),
-    username: new FormControl('', Validators.required),
-    email: new FormControl(' ', Validators.required),
-    password: new FormControl('', Validators.required),
-    confirmpassword: new FormControl('', Validators.required)
+   image: new FormControl('', Validators.required),
 
  
   });
@@ -48,32 +71,14 @@ export class ViewProfileComponent implements OnInit {
     {} 
      
 
-  ngOnInit() {
-    
-  }
-
-  onSubmit() {
-    this.submitted = true;
-        
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return console.log("Empty Input");
+    ngOnInit() {
+      //function for uploading image by connecting with backend
+      this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+      this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+           console.log('ImageUpload:uploaded:', item, status, response);
+           alert('File uploaded successfully');
+      this.router.navigate(['/profile']);
+       };
     }
-
-    this.loading = true;
-    this.authenticationService.register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.alertService.success('Registration successful', true);
-          this.router.navigate(['/profile']);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false
-        }
-      )
-
-      }
-
+  
 }
