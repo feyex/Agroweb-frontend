@@ -100,6 +100,7 @@ export class ProfileComponent implements OnInit {
       
       return console.log("Empty Input");
       
+      
     }
 
     this.loading = true;
@@ -107,6 +108,8 @@ export class ProfileComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          return console.log("SUCCESS");
+      
           this.alertService.success('Registration successful', true);
           this.router.navigate(['/view']);
         },

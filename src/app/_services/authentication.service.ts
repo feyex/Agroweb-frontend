@@ -5,14 +5,24 @@ import { catchError, map, tap } from "rxjs/operators";
 import { User } from "../_models";
 import { error } from '@angular/compiler/src/util';
 import { MessageService } from "./message.service";
-import { Observable, of } from 'rxjs';
+import {  BehaviorSubject,Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+  private currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { 
+    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUser = this.currentUserSubject.asObservable();
+  }
+
+  public get currentUserValue(): User {
+    return this.currentUserSubject.value;
+}
+
   
   login(email: string, password: string,) {
     const uri ='http://localhost:9000/login';
@@ -24,8 +34,9 @@ export class AuthenticationService {
 
     return this.http.post<any>(uri, obj)
       .pipe(map(user => {
-        if (user && user.api_token) {
+        if (user || user.api_token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUserSubject.next(user);
         }
         return user;
         console.log(user);

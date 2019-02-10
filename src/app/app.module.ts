@@ -23,6 +23,7 @@ import { AuthGuard } from "./_guards";
 import { ErrorInterceptor, JwtInterceptor  } from "./_helpers";
 import { ProfileComponent } from './profile/profile.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { UploadComponent } from './Upload/upload.component';
 
 
 
@@ -37,6 +38,7 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     AlertComponent,
     ProfileComponent,
     ViewProfileComponent,
+    UploadComponent,
     FileSelectDirective
     
     

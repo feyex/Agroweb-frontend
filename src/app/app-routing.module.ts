@@ -7,6 +7,7 @@ import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { UploadComponent } from './Upload/upload.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: SignupComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'view', component: ViewProfileComponent },
+  { path: 'upload', component: UploadComponent },
 ];
 
 @NgModule({
