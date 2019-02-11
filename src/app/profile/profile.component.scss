@@ -120,6 +120,29 @@ a:hover, a:active, a:focus {
   color: #f1ebeb;
 }
 
+.section-btns {
+  background: #365f37;
+  border: 0;
+  border-radius: 100px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: normal;
+  padding: 15px 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+ 
+}
+
+.section-btns:hover,
+.section-btns:focus {
+  background: black;  /* fallback for old browsers */
+ 
+  border-color: black;
+  color: #f1ebeb;
+}
+
+
 .bt{
   width: 13rem;
   margin-top: 2rem;
@@ -137,77 +160,95 @@ section {
 
  
  /* Nav Bar Custom */
- .navbar-custom {
+//  .navbar-custom {
+//   margin-bottom: 0;
+//   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+//   font-family: "FiraSans";
+//   background-color: black;
+//   padding-top: 1rem;
+// }
+// .navbar-custom .navbar-toggle {
+//   color:#365f37;
+//   background-color: rgba(255, 255, 255, 0.2);
+//   font-size: 12px;
+  
+// }
+// .navbar-custom .navbar-toggle:focus,
+// .navbar-custom .navbar-toggle:active {
+//   outline: none;
+// }
+// .navbar-custom .navbar-brand {
+//   font-weight: 500px;
+//   margin-top:2px;
+// }
+// .navbar-custom .navbar-brand:focus {
+//   outline: none;
+// }
+// .navbar-custom a {
+//   color: rgba(255, 255, 255, 0.8);
+// }
+// .navbar-custom .nav li a {
+//   -webkit-transition: background 0.3s ease-in-out;
+//   -moz-transition: background 0.3s ease-in-out;
+//   transition: background 0.3s ease-in-out;
+// }
+// .navbar-custom .nav li a:hover {
+//   color: rgb(53, 5, 5);
+//   outline: none;
+//   background-color: rgb(194, 156, 156);
+// }
+// .navbar-custom .nav li a:focus,
+// .navbar-custom .nav li a:active {
+//   outline: none;
+//   background-color: black;
+// }
+// .navbar-custom .nav li.active {
+//   outline: none;
+// }
+// .navbar-custom .nav li.active a {
+//   background-color: rgb(17, 4, 4);
+// }
+// .navbar-custom .nav li.active a:hover {
+//   color: rgb(15, 3, 3);
+// }
+// @media (min-width: 768px) {
+//   .navbar-custom {
+//     /*padding: 20px 0;*/
+//     color: aliceblue;
+//     border-bottom: none;
+//     letter-spacing: 1px;
+//     background: black;
+//     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+//     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+//     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+//   }
+//   .navbar-custom.top-nav-collapse {
+//     padding: 12px;
+//     background: black;
+//     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+//   }
+// }
+
+.navbar-custom {
+  // padding: 20px 0;
   margin-bottom: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-family: "FiraSans";
   background-color: black;
   padding-top: 1rem;
+  color: aliceblue;
+  border-bottom: none;
+  letter-spacing: 1px;
+  -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
-.navbar-custom .navbar-toggle {
-  color:#365f37;
-  background-color: rgba(255, 255, 255, 0.2);
-  font-size: 12px;
-  
-}
-.navbar-custom .navbar-toggle:focus,
-.navbar-custom .navbar-toggle:active {
-  outline: none;
-}
-.navbar-custom .navbar-brand {
-  font-weight: 500px;
-  margin-top:2px;
-}
-.navbar-custom .navbar-brand:focus {
-  outline: none;
-}
-.navbar-custom a {
-  color: rgba(255, 255, 255, 0.8);
-}
-.navbar-custom .nav li a {
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-}
-.navbar-custom .nav li a:hover {
-  color: rgb(53, 5, 5);
-  outline: none;
-  background-color: rgb(194, 156, 156);
-}
-.navbar-custom .nav li a:focus,
-.navbar-custom .nav li a:active {
-  outline: none;
-  background-color: black;
-}
-.navbar-custom .nav li.active {
-  outline: none;
-}
-.navbar-custom .nav li.active a {
-  background-color: rgb(17, 4, 4);
-}
-.navbar-custom .nav li.active a:hover {
-  color: rgb(15, 3, 3);
-}
-@media (min-width: 768px) {
-  .navbar-custom {
-    /*padding: 20px 0;*/
-    color: aliceblue;
-    border-bottom: none;
-    letter-spacing: 1px;
-    background: black;
-    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-  }
-  .navbar-custom.top-nav-collapse {
-    padding: 12px;
-    background: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
-  }
-}
+
 
 /* Custom Horizontal Rule */
+
 
 hr.small {
   max-width: 260px;
@@ -253,28 +294,6 @@ header .intro-text .intro-heading {
 .new{
 font-size: 1.3rem;
 }
-
-@media (max-width: 768px) {
-  header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 80px;
-  }
-  header .intro-text .intro-lead-in {
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: italic;
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 25px;
-  }
-  header .intro-text .intro-heading {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 75px;
-    line-height: 75px;
-    margin-bottom: 50px;
-  }
-}
  
 .welcome {
   margin-top: -150px;
@@ -288,56 +307,60 @@ font-size: 1.3rem;
 }
 
 /*Section resposible for text transformation /fading*/
-  div.exp {
-    display:inline-block;
-    overflow:hidden;
-    white-space:nowrap;
+div.exp {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.exp .new ::after{
+  content: "DRIVEN BY IDEAS, CREATIVITY AND INNOVATION";
+}
+
+div.exp:first-of-type {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+p div.exp:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+div.exp:last-of-type {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-500px; }
+    20% { margin-left:-500px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+
+.drk{
+  color:#393939;
+  font-size: 3rem;
+  font-weight:600;
   }
-  
-  div.exp:first-of-type {    /* For increasing performance 
-                         ID/Class should've been used. 
-                         For a small demo 
-                         it's okaish for now */
-    animation: showup 7s infinite;
-  }
-  
- p div.exp:last-of-type {
-    width:0px;
-    animation: reveal 7s infinite;
-  }
-  
- div.exp:last-of-type {
-    margin-left:-355px;
-    animation: slidein 7s infinite;
-  }
-  
-  @keyframes showup {
-      0% {opacity:0;}
-      20% {opacity:1;}
-      80% {opacity:1;}
-      100% {opacity:0;}
-  }
-  
-  @keyframes slidein {
-      0% { margin-left:-500px; }
-      20% { margin-left:-500px; }
-      35% { margin-left:0px; }
-      100% { margin-left:0px; }
-  }
-  
-  @keyframes reveal {
-      0% {opacity:0;width:0px;}
-      20% {opacity:1;width:0px;}
-      30% {width:355px;}
-      80% {opacity:1;}
-      100% {opacity:0;width:355px;}
-  }
-  
-  .drk{
-    color:#393939;
-    font-size: 3rem;
-    font-weight:600;
-    }
 
     input {
       background: #ebe8e8;  
@@ -407,6 +430,7 @@ font-size: 1.3rem;
       position: relative;
       padding: 2em;
     }
+    
   
     .modal-header, .modal-footer {
       border-bottom: 0;
@@ -490,3 +514,698 @@ font-size: 1.3rem;
       margin-top: 20px;
     }
   
+
+    @media screen and (max-width: 179px){
+      input {
+        font-size: 12px;
+        margin-left: 1rem;
+        max-width: 6rem;
+      }
+    
+      .section-btn{
+        margin-left: 0rem !important;
+    }
+    
+      .bt{
+        width: 7rem;
+        font-size: 14px;
+      }
+    
+      .drk{
+        font-size: 20px;
+        font-style: italic;
+        font-weight: bold;
+      }
+      header .intro-text {
+      padding-top: 85px;
+      padding-bottom: 12px;
+      }
+
+      header .intro-text .intro-lead-in{
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
+
+      header .intro-text .intro-heading {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+
+      .new{
+        font-size: 0.7rem;
+        margin-left: 247px;
+      
+        }
+
+        .exp .new ::after{
+          content: " ";
+        }
+
+        header {
+          color: white;
+          margin-top: 4rem;
+          font-weight: bold;
+        }
+
+        @keyframes slidein {
+          // 0% { margin-left:10px; }
+          // 20% { margin-left:10px; }
+          // 35% { margin-left:0px; }
+          // 100% { margin-left:0px; }
+      }
+      
+      @keyframes reveal {
+          0% {opacity:0;width:0px;}
+          20% {opacity:1;width:0px;}
+          30% {width:355px;}
+          80% {opacity:1;}
+          100% {opacity:0;width:355px;}
+      }
+
+      .section-btns{
+        padding: 9px 0px;
+        background-color: transparent;
+        border-radius: 0px;
+      }
+
+      label{
+        margin-left: 1rem;
+      }
+
+      .lb{
+        margin-left:1rem;
+      }
+
+      .navbar-toggler {
+        margin: 0.5rem -2.25px 0 -1.25rem !important;
+    }
+
+    .navbar-custom {
+      padding-top: 0rem;
+     }
+    
+    }
+    
+    
+    @media screen  and (min-width: 180px) and (max-width: 230px){
+      input {
+        font-size: 12px;
+        margin-left: 2rem;
+        max-width: 8rem;
+      }
+    
+      .section-btn{
+        margin-left: 0rem !important;
+    }
+    
+      .bt{
+        width: 7rem;
+        font-size: 14px;
+      }
+    
+      .drk{
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+      }
+      header .intro-text {
+      padding-top: 85px;
+      padding-bottom: 12px;
+      }
+
+      header .intro-text .intro-lead-in{
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
+
+      header .intro-text .intro-heading {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+
+      .new{
+        font-size: 0.7rem;
+        margin-left:350px;
+      
+        }
+
+        .exp .new ::after{
+          content: "DRIVEN BY IDEAS,INNOVATION";
+        }
+
+        header {
+          color: white;
+          margin-top: 4rem;
+          font-weight: bold;
+        }
+
+        @keyframes slidein {
+          // 0% { margin-left:10px; }
+          // 20% { margin-left:10px; }
+          // 35% { margin-left:0px; }
+          // 100% { margin-left:0px; }
+      }
+      
+      @keyframes reveal {
+          0% {opacity:0;width:0px;}
+          20% {opacity:1;width:0px;}
+          30% {width:355px;}
+          80% {opacity:1;}
+          100% {opacity:0;width:355px;}
+      }
+
+      .section-btns{
+        padding: 9px 0px;
+        background-color: transparent;
+        border-radius: 0px;
+      }
+
+      label{
+        margin-left: 2rem;
+      }
+
+      .lb{
+        margin-left:2rem;
+      }
+
+      .navbar-toggler {
+        margin: 0.5rem -2.25px 0 -1.25rem !important;
+    }
+
+    .navbar-custom {
+      padding-top: 0rem;
+     }
+    
+    }
+    
+    @media screen and (min-width: 231px) and (max-width: 350px) {
+      input {
+          font-size: 12px;
+          margin-left: 4rem;
+          max-width: 9.5rem;
+      }
+    
+      .section-btn{
+        margin-left: -1rem !important;
+    }
+    
+      .bt{
+        width: 7rem;
+        font-size: 14px;
+      }
+    
+      .drk{
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      header .intro-text {
+      padding-top: 85px;
+      padding-bottom: 12px;
+      }
+
+      header .intro-text .intro-lead-in{
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
+
+      header .intro-text .intro-heading {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+
+      .new{
+        font-size: 0.8rem;
+        margin-left: 345px;
+      }
+
+       .exp .new ::after{
+          content: "DRIVEN BY IDEAS AND INNOVATION";
+        }
+
+        header {
+          color: white;
+          margin-top: 4rem;
+          font-weight: bold;
+        }
+
+        @keyframes slidein {
+          // 0% { margin-left:10px; }
+          // 20% { margin-left:10px; }
+          // 35% { margin-left:0px; }
+          // 100% { margin-left:0px; }
+      }
+      
+      @keyframes reveal {
+          0% {opacity:0;width:0px;}
+          20% {opacity:1;width:0px;}
+          30% {width:355px;}
+          80% {opacity:1;}
+          100% {opacity:0;width:355px;}
+      }
+
+      .section-btns{
+        padding: 9px 0px;
+        background-color: transparent;
+        border-radius: 0px;
+      }
+
+      label{
+        margin-left: 4rem;
+      }
+
+      .lb{
+        margin-left:4rem;
+      }
+
+      .navbar-toggler {
+        margin: 0.5rem -2.25px 0 -1.25rem !important;
+    }
+
+    .navbar-custom {
+      padding-top: 0rem;
+     }
+    
+    
+    }
+    
+    @media screen and (min-width: 451px) and (max-width: 575px) {
+    
+      .section-btn{
+        margin-left: 1rem !important;
+      }
+    
+      input{
+        margin-left:8rem;
+        max-width: 16rem;
+      }
+   
+      .bt{
+        width: 11rem;
+        font-size: 14px;
+      }
+    
+      .drk{
+        font-size: 36px;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      header .intro-text {
+        padding-top: 85px;
+        padding-bottom: 12px;
+      }
+
+      header .intro-text .intro-lead-in{
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 17px;
+      }
+
+      header .intro-text .intro-heading {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+
+      .new{
+        font-size: 0.9rem;
+        margin-left: 353px;
+      
+        }
+
+        header {
+          color: white;
+          margin-top: 4rem;
+          font-weight: bold;
+        }
+
+        @keyframes slidein {
+          // 0% { margin-left:10px; }
+          // 20% { margin-left:10px; }
+          // 35% { margin-left:0px; }
+          // 100% { margin-left:0px; }
+      }
+      
+      @keyframes reveal {
+          0% {opacity:0;width:0px;}
+          20% {opacity:1;width:0px;}
+          30% {width:355px;}
+          80% {opacity:1;}
+          100% {opacity:0;width:355px;}
+      }
+
+      .section-btns{
+        padding: 9px 0px;
+        background-color: transparent;
+        border-radius: 0px;
+      }
+
+      label{
+        margin-left: 8rem;
+      }
+
+      .lb{
+        margin-left:8rem;
+      }
+    
+      p {
+        
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 33px;
+      }
+    
+    }
+    
+    @media screen and (min-width: 351px) and (max-width: 450px) {
+    
+      .section-btn{
+          margin-left: 2rem !important;
+      }
+    
+      input{
+        margin-left:5rem;
+        max-width: 13rem;
+      }
+    
+      .bt{
+        width: 9rem;
+        font-size: 17px;
+      }
+
+      .drk{
+        font-size: 30px;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      header .intro-text {
+      padding-top: 85px;
+      padding-bottom: 12px;
+      }
+
+      header .intro-text .intro-lead-in{
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
+
+      header .intro-text .intro-heading {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+
+      .new{
+        font-size: 0.9rem;
+        margin-left: 345px;
+      }
+
+       .exp .new ::after{
+          content: "DRIVEN BY IDEAS AND INNOVATION";
+        }
+
+        header {
+          color: white;
+          margin-top: 4rem;
+          font-weight: bold;
+        }
+
+        @keyframes slidein {
+          // 0% { margin-left:10px; }
+          // 20% { margin-left:10px; }
+          // 35% { margin-left:0px; }
+          // 100% { margin-left:0px; }
+      }
+      
+      @keyframes reveal {
+          0% {opacity:0;width:0px;}
+          20% {opacity:1;width:0px;}
+          30% {width:355px;}
+          80% {opacity:1;}
+          100% {opacity:0;width:355px;}
+      }
+
+      .section-btns{
+        padding: 9px 0px;
+        background-color: transparent;
+        border-radius: 0px;
+      }
+
+      label{
+        margin-left: 5rem;
+      }
+
+      .lb{
+        margin-left:5rem;
+      }  
+    }
+    
+    @media screen and (min-width:576px) and (max-width: 767px) {
+    
+      .section-btn{
+          margin-left: 9rem !important;
+      }
+    
+      input{
+        margin-left: 0rem;
+        max-width: 15rem;
+    }
+    
+      .bt{
+        width: 16rem;
+        font-size: 17px;
+      }
+
+      .drk{
+        font-size: 36px;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      // header .intro-text {
+      //   padding-top: 85px;
+      //   padding-bottom: 12px;
+      // }
+
+      header .intro-text .intro-lead-in{
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 17px;
+      }
+
+      header .intro-text .intro-heading {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 703;
+        font-size: 57px;
+        line-height: 48px;
+        margin-bottom: 20px;
+      }
+
+      .new{
+        font-size: 0.9rem;
+        margin-left: 353px;
+      
+        }
+
+        header {
+          color: white;
+          margin-top: 4rem;
+          font-weight: bold;
+        }
+
+        @keyframes slidein {
+          // 0% { margin-left:10px; }
+          // 20% { margin-left:10px; }
+          // 35% { margin-left:0px; }
+          // 100% { margin-left:0px; }
+      }
+      
+      @keyframes reveal {
+          0% {opacity:0;width:0px;}
+          20% {opacity:1;width:0px;}
+          30% {width:355px;}
+          80% {opacity:1;}
+          100% {opacity:0;width:355px;}
+      }
+
+      .section-btns{
+        padding: 9px 0px;
+        background-color: transparent;
+        border-radius: 0px;
+      }
+
+      label{
+        margin-left: 0rem;
+      }
+
+      .lb{
+        margin-left:-1rem;
+      }
+    
+
+    }
+    
+    // @media screen and (max-width: 991px) {
+    
+    //   h3 {
+    //     font-size: 1.2em;
+    //   }
+    
+    //   p {
+    //     font-size: 13px;
+    //   }
+    
+     
+    // }
+    
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+      .section-btn{
+        margin-left: 15rem !important;
+    }
+  
+    input{
+      margin-left: 4rem;
+      max-width: 15rem;
+  }
+  
+    .bt{
+      width: 16rem;
+      font-size: 17px;
+    }
+
+    .drk{
+      font-size: 36px;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    // header .intro-text {
+    //   padding-top: 85px;
+    //   padding-bottom: 12px;
+    // }
+
+    header .intro-text .intro-lead-in{
+      font-size: 10px;
+      line-height: 20px;
+      margin-bottom: 17px;
+    }
+
+    header .intro-text .intro-heading {
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-weight: 717;
+      font-size: 61px;
+      line-height: 47px;
+      margin-bottom: 20px;
+    }
+
+    .new{
+      font-size: 0.9rem;
+      margin-left: 353px;
+    
+      }
+
+      header {
+        color: white;
+        margin-top: 4rem;
+        font-weight: bold;
+      }
+
+      @keyframes slidein {
+        0% { margin-left:-200px; }
+        20% { margin-left:-200px; }
+        35% { margin-left:0px; }
+        100% { margin-left:0px; }
+    }
+    
+    @keyframes reveal {
+        0% {opacity:0;width:0px;}
+        20% {opacity:1;width:0px;}
+        30% {width:355px;}
+        80% {opacity:1;}
+        100% {opacity:0;width:355px;}
+    }
+
+    .section-btns{
+      padding: 9px 0px;
+      background-color: transparent;
+      border-radius: 0px;
+    }
+
+    label{
+      margin-left: 4rem;
+    }
+
+    .lb{
+      margin-left:4rem;
+    }
+  
+
+    }
+    
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+      .section-btn{
+        margin-left: 20rem !important;
+    }
+  
+    input{
+      margin-left: 4rem;
+      max-width: 20rem;
+  }
+  
+    .bt{
+      width: 16rem;
+      font-size: 17px;
+    }
+
+    label{
+      margin-left: 2rem;
+    }
+
+    .lb{
+      margin-left: -1rem;
+    }
+  
+    }
+    
+    @media screen and (max-width: 767px) {
+    
+      
+      footer {
+        text-align: center;
+      }
+    
+      .footer-info p,
+      .footer-bottom .phone-contact {
+        margin-right: 0;
+      }
+  
+    }
+    
