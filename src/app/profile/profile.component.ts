@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  currentUser: User;
 
    //function responsible for preview of image in the browser before submission
    public imagePath;

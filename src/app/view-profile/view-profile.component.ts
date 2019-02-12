@@ -25,6 +25,8 @@ export class ViewProfileComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  home:boolean;
+  currentUser: User;
   
   //function responsible for preview of image in the browser before submission
   public imagePath;
