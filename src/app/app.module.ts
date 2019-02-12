@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from  'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -38,8 +38,8 @@ import { UploadComponent } from './Upload/upload.component';
     AlertComponent,
     ProfileComponent,
     ViewProfileComponent,
-    UploadComponent,
-    FileSelectDirective
+    UploadComponent
+   
     
     
   ],
@@ -50,7 +50,8 @@ import { UploadComponent } from './Upload/upload.component';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    FileUploadModule 
   ],
   providers: [
     AuthGuard,
